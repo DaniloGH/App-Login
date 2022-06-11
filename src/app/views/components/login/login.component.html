@@ -1,0 +1,40 @@
+<h1 class="card-title">LOGIN</h1>
+<form [formGroup]="loginForm">
+  <div class="textfield">
+    <label for="email">E-mail</label>
+    <input [ngClass]="loginForm.controls.email.touched && loginForm.controls.email.invalid ? 'email-error' : 'email'" 
+      type="text" 
+      formControlName="email" 
+      placeholder="nome@email.com" 
+    />
+    <div class="invalid-field" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+      Campo obrigatório
+    </div>
+    <div class="invalid-field" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.pattern">
+      E-mail inválido
+    </div>
+  </div>
+  <div class="textfield">
+    <label for="pwd">Senha</label>
+    <input [ngClass]="loginForm.controls.pwd.touched && loginForm.controls.pwd.invalid ? 'pwd-error' : 'pwd'" 
+      type="password" 
+      formControlName="pwd" 
+      placeholder="Senha" 
+      [maxLength]="18" 
+    />
+    <div class="invalid-field" *ngIf="loginForm.controls.pwd.touched && loginForm.controls.pwd.errors?.required">
+      Campo obrigatório
+    </div>
+  </div>
+  <button class="btn-login" (click)="onSubmit()">Login</button>
+
+  <div class="forgot-or-signup">
+    <div class="forgot-password">
+      <a class="forgot-password-link" href="">Esqueceu a senha?</a>
+    </div>
+    <p class="p">ou</p>
+    <div class="signup">
+      <a class="signup-link" href="">Cadastre-se</a>
+    </div>
+  </div>
+</form>

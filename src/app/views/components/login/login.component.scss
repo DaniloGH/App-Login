@@ -1,0 +1,121 @@
+.card-title {
+  color: #00ff88;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
+
+form {
+  display: grid;
+}
+
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #514869;
+  color: #f0ffffde;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #00000056;
+  box-sizing: border-box;
+}
+
+.email, .pwd {
+  outline: none;
+}
+
+.email-error, .pwd-error {
+  outline: 1px solid #FF3434;
+}
+
+.textfield > label {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+
+.textfield > .invalid-field {
+  font-size: 10pt;
+  margin-top: 7px;
+  color: #FF3434;
+}
+
+.textfield > input::placeholder {
+  color: #f0ffff94;
+}
+
+.forgot-or-signup{
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  .forgot-password {
+    width: 48%;
+    text-align: left;
+  }
+
+  .forgot-password-link {
+    font-size: 10pt;
+    color: #c1c1c194;
+  }
+
+  .forgot-password-link:hover {
+    text-decoration: none;
+  }
+
+  .p {
+    width: 5%;
+    margin: 0;
+    color: #f0ffffde;
+    text-align: center;
+  }
+
+  .signup {
+    width: 45%;
+    text-align: center;
+  }
+
+  .signup-link {
+    font-size: 12pt;
+    color: #c1c1c194;
+  }
+
+  .signup-link:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px 0px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: #00ff88;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  input[type="password"]{
+    letter-spacing: 7px;
+  }
+
+  input:placeholder-shown[type="password"]{
+    letter-spacing: normal;
+  }
+}
