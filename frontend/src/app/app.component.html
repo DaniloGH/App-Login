@@ -1,13 +1,12 @@
-<router-outlet>
-  <div class="main-login">
-    <div class="left-login">
-      <h1 class="main-title">Faça login<br>e entre para o nosso time</h1>
-      <img src="../../../assets/animation.svg" alt="animation" class="left-login-animation">
-    </div>
-    <div class="right-login">
-      <div class="card-login">
-        <app-login></app-login>
-      </div>
+<div class="main-login">
+  <div class="left-login">
+    <h1 class="main-title">{{title}}<br>e entre para o nosso time</h1>
+    <img src="../../../assets/animation.svg" alt="animation" class="left-login-animation">
+  </div>
+  <div class="right-login">
+    <div class="card-login">
+      <router-outlet>
+      </router-outlet>
     </div>
   </div>
-</router-outlet>
+</div>

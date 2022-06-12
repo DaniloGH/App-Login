@@ -1,1 +1,63 @@
-<p>signup works!</p>
+<h1 class="card-title">SIGNUP</h1>
+<form [formGroup]="signupForm">
+  <div class="textfield">
+    <label for="email">E-mail</label>
+    <input [ngClass]="signupForm.controls.email.touched && signupForm.controls.email.invalid ? 'error' : 'normal'" 
+      type="text" 
+      formControlName="email" 
+      placeholder="nome@email.com" 
+    />
+    <div class="errors">
+      <div class="invalid-field" *ngIf="signupForm.controls.email.touched && signupForm.controls.email.errors?.required">
+        Campo obrigatório
+      </div>
+      <div class="invalid-field" *ngIf="signupForm.controls.email.touched && signupForm.controls.email.errors?.pattern">
+        E-mail inválido
+      </div>
+    </div>
+  </div>
+  <div class="textfield">
+    <label for="pwd">Senha</label>
+    <input [ngClass]="signupForm.controls.pwd.touched && signupForm.controls.pwd.invalid ? 'error' : 'normal'" 
+      type="password" 
+      formControlName="pwd" 
+      placeholder="Senha" 
+      [maxLength]="18" 
+    />
+    <div class="errors">
+      <div class="invalid-field" *ngIf="signupForm.controls.pwd.touched && signupForm.controls.pwd.errors?.required">
+        Campo obrigatório
+      </div>
+      <div class="invalid-field" *ngIf="signupForm.controls.pwd.touched && signupForm.controls.pwd.errors?.pattern">
+        Senha inválida
+      </div>
+    </div>
+  </div>
+  <div class="textfield">
+    <label for="checkPwd">Confirme a senha</label>
+    <input [ngClass]="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.invalid ? 'error' : 'normal'" 
+      type="password" 
+      formControlName="checkPwd" 
+      placeholder="Senha" 
+      [maxLength]="18"
+    />
+    <div class="errors">
+      <div class="invalid-field" *ngIf="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.errors?.required">
+        Campo obrigatório
+      </div>
+      <div class="invalid-field" *ngIf="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.errors?.diff">
+        As senhas não são iguais
+      </div>
+    </div>
+  </div>
+  <button class="btn-signup" [disabled]="signupForm.invalid" (click)="onSubmit()">Signup</button>
+
+  <div class="footer">
+    <p class="instructions">
+      Instruções para criar senha, Obrigatório:<br> 
+      <li>No mín. 8 e máx. 18 caracteres</li>
+      <li>1 número, 1 letra maiúscula e 1 minúscula</li>
+      <li>1 caractere especial ex.: (@, #, $, &, *)</li>
+    </p>
+  </div>
+</form>

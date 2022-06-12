@@ -1,7 +1,7 @@
 .card-title {
   color: #00ff88;
   font-weight: 800;
-  margin: 0;
+  margin: 0px 0px 5px 0px;
   text-align: center;
 }
 
@@ -15,10 +15,10 @@ form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin: 10px 0px;
+  margin-bottom: 10px;
 }
 
-.textfield > input {
+.textfield>input {
   width: 100%;
   border: none;
   border-radius: 10px;
@@ -30,22 +30,27 @@ form {
   box-sizing: border-box;
 }
 
-.email, .pwd {
+.normal {
   outline: none;
 }
 
-.email-error, .pwd-error {
+.error {
   outline: 1px solid #FF3434;
 }
 
 .textfield > label {
   color: #f0ffffde;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-.textfield > .invalid-field {
+.errors {
+  display: flex;
+  height: 1rem;
+}
+
+.errors > .invalid-field {
   font-size: 10pt;
-  margin-top: 7px;
+  margin-top: 5px;
   color: #FF3434;
 }
 
@@ -53,14 +58,14 @@ form {
   color: #f0ffff94;
 }
 
-.forgot-or-signup{
+.forgot-or-signup {
   display: flex;
-  align-items: center;
-  margin-top: 1.5rem;
+  flex-direction: column;
+  margin-top: 1rem;
 
   .forgot-password {
-    width: 48%;
-    text-align: left;
+    margin-top: 5px;
+    text-align: center;
   }
 
   .forgot-password-link {
@@ -72,32 +77,50 @@ form {
     text-decoration: none;
   }
 
-  .p {
-    width: 5%;
-    margin: 0;
-    color: #f0ffffde;
-    text-align: center;
+  .divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      color: #f0ffffde;
+      margin: 1rem 10px;
+    }
+
+    hr {
+      height: 1px;
+      width: 100%;
+      border: none;
+      background-color: #514869;
+    }
   }
 
   .signup {
-    width: 45%;
     text-align: center;
   }
-
-  .signup-link {
-    font-size: 12pt;
-    color: #c1c1c194;
-  }
-
-  .signup-link:hover {
-    text-decoration: none;
+  
+  .btn-signup {
+    width: 40%;
+    padding: 16px 0px;
+    margin-top: 5px;
+    font-size: 11px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: #2b134b;
+    background: #fafafa;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #fafaf952;
   }
 }
 
 .btn-login {
   width: 100%;
   padding: 16px 0px;
-  margin-top: 1rem;
+  margin-top: 10px;
   border: none;
   border-radius: 8px;
   outline: none;
@@ -110,12 +133,13 @@ form {
   box-shadow: 0px 10px 40px -12px #00ff8052;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0){
-  input[type="password"]{
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type="password"] {
     letter-spacing: 7px;
   }
 
-  input:placeholder-shown[type="password"]{
+  input:placeholder-shown[type="password"] {
     letter-spacing: normal;
   }
 }
