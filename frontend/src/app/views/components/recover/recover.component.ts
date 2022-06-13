@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-recover',
+  templateUrl: './recover.component.html',
+  styleUrls: ['./recover.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+export class RecoverComponent implements OnInit {
+  recoverForm: FormGroup;
   emailPattern = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$';
 
   constructor(
@@ -19,16 +19,15 @@ export class LoginComponent implements OnInit {
   }
 
   buildForm() {
-    this.loginForm = this.formBuilder.group({
+    this.recoverForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.pattern(this.emailPattern)]],
-      pwd: [null, [Validators.required]] 
     });
   }
 
-  onLogin() {
-    this.loginForm.markAllAsTouched();
-    if(this.loginForm.valid){
-      console.log('Dados enviados ao servidor: '+JSON.stringify(this.loginForm.value));
+  send() {
+    this.recoverForm.markAllAsTouched();
+    if(this.recoverForm.valid){
+      console.log('Dados enviados ao servidor: '+JSON.stringify(this.recoverForm.value));
     }
   }
 }

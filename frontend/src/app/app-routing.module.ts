@@ -1,4 +1,4 @@
-import { ForgotPasswordComponent } from './views/components/forgot-password/forgot-password.component';
+import { RecoverComponent } from './views/components/recover/recover.component';
 import { SignupComponent } from './views/components/signup/signup.component';
 import { LoginComponent } from './views/components/login/login.component';
 import { NgModule } from '@angular/core';
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: SignupComponent
   },
   { 
-    path: 'forgot-password', 
-    component: ForgotPasswordComponent
+    path: 'recover', 
+    component: RecoverComponent
   }
 ];
 

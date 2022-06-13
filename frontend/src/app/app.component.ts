@@ -1,4 +1,4 @@
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Faça login';
+  title: string;
+  subtitle: string;
 
   constructor(private router: Router) {
     router.events
@@ -15,12 +16,15 @@ export class AppComponent {
         switch (event.url) {
           case '/':
             this.title = 'Faça login'
+            this.subtitle = 'e utilize nossas soluções'
             break;
           case '/signup':
             this.title = 'Cadastre-se'
+            this.subtitle = 'e entre para o nosso time'
             break;
-          case '/forgot-password':
-            this.title = 'Recupere sua senha'
+          case '/recover':
+            this.title = 'Recupere o acesso'
+            this.subtitle = 'para continuar com a gente'
             break;
         }
       });

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/components/login/login.component';
 import { SignupComponent } from './views/components/signup/signup.component';
-import { ForgotPasswordComponent } from './views/components/forgot-password/forgot-password.component';
+import { RecoverComponent } from './views/components/recover/recover.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    RecoverComponent
   ],
   imports: [
     BrowserModule,
