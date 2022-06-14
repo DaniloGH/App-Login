@@ -8,13 +8,15 @@ import { LoginComponent } from './views/components/login/login.component';
 import { SignupComponent } from './views/components/signup/signup.component';
 import { RecoverComponent } from './views/components/recover/recover.component';
 import { CommonModule } from '@angular/common';
+import { NewPasswordComponent } from './views/components/new-password/new-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    RecoverComponent
+    RecoverComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
