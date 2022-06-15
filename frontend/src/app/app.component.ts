@@ -26,6 +26,10 @@ export class AppComponent {
             this.title = 'Recupere o acesso'
             this.subtitle = 'para continuar com a gente'
             break;
+          case '/new-password':
+            this.title = 'Siga as instruções'
+            this.subtitle = 'para criar sua nova senha'
+            break;
         }
       });
   }
