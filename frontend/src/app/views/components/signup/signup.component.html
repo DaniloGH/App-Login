@@ -33,6 +33,14 @@
       </div>
     </div>
   </div>
+  <div class="instructions">
+    <p>
+      Sua senha deve conter:
+    </p>
+    <li>De 8 a 18 caracteres</li>
+    <li>1 número, 1 letra maiúscula e 1 minúscula</li>
+    <li>1 caractere especial ex.: (@, #, $, &, *)</li>
+  </div>
   <div class="textfield">
     <label for="checkPwd">Confirme a senha</label>
     <input [ngClass]="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.invalid ? 'error' : 'normal'" 
@@ -51,13 +59,4 @@
     </div>
   </div>
   <button class="btn-signup" [disabled]="signupForm.invalid" (click)="onSubmit()">Signup</button>
-
-  <div class="footer">
-    <p class="instructions">
-      Instruções para criar senha, Obrigatório:<br> 
-      <li>No mín. 8 e máx. 18 caracteres</li>
-      <li>1 número, 1 letra maiúscula e 1 minúscula</li>
-      <li>1 caractere especial ex.: (@, #, $, &, *)</li>
-    </p>
-  </div>
 </form>

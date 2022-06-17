@@ -27,7 +27,7 @@ export class RecoverComponent implements OnInit {
   send() {
     this.recoverForm.markAllAsTouched();
     if(this.recoverForm.valid){
-      console.log('Dados enviados ao servidor: '+JSON.stringify(this.recoverForm.value));
+      console.log('Submissão dos dados:'+JSON.stringify(this.recoverForm.value));
     }
   }
 }

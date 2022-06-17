@@ -58,16 +58,13 @@ form {
   color: #f0ffff94;
 }
 
-.footer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 1rem;
-
-  .instructions {
-    font-size: 10pt;
-    color:#00ff88;
-    margin: 0px;
+.instructions {
+  font-size: 11pt;
+  color: #00ff88;
+  margin-bottom: 10px;
+  p {
+    font-size: 12pt;
+    margin: 0px 0px 2px 0px;
   }
 }
 

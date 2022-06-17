@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.loginForm.markAllAsTouched();
     if(this.loginForm.valid){
-      console.log('Dados enviados ao servidor: '+JSON.stringify(this.loginForm.value));
+      console.log('Submissão dos dados:'+JSON.stringify(this.loginForm.value));
     }
   }
 }

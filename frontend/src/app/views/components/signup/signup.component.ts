@@ -46,7 +46,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if(this.signupForm.valid){
-      console.log('Dados enviados ao servidor: ', JSON.stringify(this.signupForm));
+      console.log('Submissão dos dados:', JSON.stringify(this.signupForm.value));
     }
   }
 }
