@@ -15,18 +15,20 @@
     </div>
   </div>
   <div class="textfield">
-    <label for="pwd">Senha</label>
-    <input [ngClass]="loginForm.controls.pwd.touched && loginForm.controls.pwd.invalid ? 'error' : 'normal'"
-      type="password" formControlName="pwd" placeholder="Senha" [maxLength]="18" 
+    <label for="password">Senha</label>
+    <input [ngClass]="loginForm.controls.password.touched && loginForm.controls.password.invalid ? 'error' : 'normal'"
+      type="password" formControlName="password" placeholder="Senha" [maxLength]="18" 
     />
     <div class="errors">
-      <div class="invalid-field" *ngIf="loginForm.controls.pwd.touched && loginForm.controls.pwd.errors?.required">
+      <div class="invalid-field" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
         Campo obrigatório
+      </div>
+      <div class="invalid-field" *ngIf="hasError">
+        Usuário ou senha inválidos
       </div>
     </div>
   </div>
   <button class="btn-login" (click)="onLogin()">Login</button>
-
   <div class="forgot-or-signup">
     <div class="forgot-password">
       <a class="forgot-password-link" [routerLink]="['/recover']">Esqueceu a senha?</a>

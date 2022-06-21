@@ -17,18 +17,18 @@
     </div>
   </div>
   <div class="textfield">
-    <label for="pwd">Senha</label>
-    <input [ngClass]="signupForm.controls.pwd.touched && signupForm.controls.pwd.invalid ? 'error' : 'normal'" 
+    <label for="password">Senha</label>
+    <input [ngClass]="signupForm.controls.password.touched && signupForm.controls.password.invalid ? 'error' : 'normal'" 
       type="password" 
-      formControlName="pwd" 
+      formControlName="password" 
       placeholder="Senha" 
       [maxLength]="18" 
     />
     <div class="errors">
-      <div class="invalid-field" *ngIf="signupForm.controls.pwd.touched && signupForm.controls.pwd.errors?.required">
+      <div class="invalid-field" *ngIf="signupForm.controls.password.touched && signupForm.controls.password.errors?.required">
         Campo obrigatório
       </div>
-      <div class="invalid-field" *ngIf="signupForm.controls.pwd.touched && signupForm.controls.pwd.errors?.pattern">
+      <div class="invalid-field" *ngIf="signupForm.controls.password.touched && signupForm.controls.password.errors?.pattern">
         Senha inválida
       </div>
     </div>
@@ -42,18 +42,18 @@
     <li>1 caractere especial ex.: (@, #, $, &, *)</li>
   </div>
   <div class="textfield">
-    <label for="checkPwd">Confirme a senha</label>
-    <input [ngClass]="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.invalid ? 'error' : 'normal'" 
+    <label for="confirmPassword">Confirme a senha</label>
+    <input [ngClass]="signupForm.controls.confirmPassword.touched && signupForm.controls.confirmPassword.invalid ? 'error' : 'normal'" 
       type="password" 
-      formControlName="checkPwd" 
+      formControlName="confirmPassword" 
       placeholder="Senha" 
       [maxLength]="18"
     />
     <div class="errors">
-      <div class="invalid-field" *ngIf="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.errors?.required">
+      <div class="invalid-field" *ngIf="signupForm.controls.confirmPassword.touched && signupForm.controls.confirmPassword.errors?.required">
         Campo obrigatório
       </div>
-      <div class="invalid-field" *ngIf="signupForm.controls.checkPwd.touched && signupForm.controls.checkPwd.errors?.diff">
+      <div class="invalid-field" *ngIf="signupForm.controls.confirmPassword.touched && signupForm.controls.confirmPassword.errors?.diff">
         As senhas não são iguais
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, AsyncValidatorFn } from '@angular/forms';
+import { Register } from 'src/app/models/register';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,6 +15,7 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private Service: SignupService
   ) { }
 
   ngOnInit() {
@@ -22,10 +25,10 @@ export class SignupComponent implements OnInit {
   buildForm() {
     this.signupForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.pattern(this.emailPattern)]],
-      pwd: [null, [Validators.required, Validators.pattern(this.pwdPattern)]], 
-      checkPwd: [null, [Validators.required]],
+      password: [null, [Validators.required, Validators.pattern(this.pwdPattern)]], 
+      confirmPassword: [null, [Validators.required]],
     }, {
-      validator: this.compareFields('pwd', 'checkPwd') 
+      validator: this.compareFields('password', 'confirmPassword') 
     });
   }
 
@@ -46,7 +49,19 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if(this.signupForm.valid){
+
       console.log('Submissão dos dados:', JSON.stringify(this.signupForm.value));
+
+      const obj: Register = {
+        ...this.signupForm.value,
+      }
+
+      this.Service.register(obj).subscribe((response) => {
+        alert("SUCESSO!");
+        console.log(response);
+      }, (error) => {
+        alert("Erro interno no servidor!");
+      });
     }
   }
 }
