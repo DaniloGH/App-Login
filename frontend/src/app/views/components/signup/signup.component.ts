@@ -49,16 +49,12 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if(this.signupForm.valid){
-
-      console.log('Submissão dos dados:', JSON.stringify(this.signupForm.value));
-
       const obj: Register = {
         ...this.signupForm.value,
       }
-
       this.Service.register(obj).subscribe((response) => {
         alert("SUCESSO!");
-        console.log(response);
+        //actions
       }, (error) => {
         alert("Erro interno no servidor!");
       });

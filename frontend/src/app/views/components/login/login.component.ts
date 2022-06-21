@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
     }
       
     if(this.loginForm.valid){
-      console.log('Submissão dos dados:'+JSON.stringify(this.loginForm.value));
       this.Service.login(obj).subscribe((response) => {
         alert("SUCESSO!");
         console.log(response);

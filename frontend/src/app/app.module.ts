@@ -10,6 +10,11 @@ import { SignupComponent } from './views/components/signup/signup.component';
 import { RecoverComponent } from './views/components/recover/recover.component';
 import { CommonModule } from '@angular/common';
 import { NewPasswordComponent } from './views/components/new-password/new-password.component';
+import { HomeComponent } from './views/components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,8 @@ import { NewPasswordComponent } from './views/components/new-password/new-passwo
     LoginComponent,
     SignupComponent,
     RecoverComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,11 @@ import { NewPasswordComponent } from './views/components/new-password/new-passwo
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

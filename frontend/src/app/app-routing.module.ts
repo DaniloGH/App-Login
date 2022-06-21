@@ -4,6 +4,7 @@ import { SignupComponent } from './views/components/signup/signup.component';
 import { LoginComponent } from './views/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './views/components/home/home.component';
 
 const routes: Routes = [
   { 
@@ -22,7 +23,10 @@ const routes: Routes = [
     path: 'new-password', 
     component: NewPasswordComponent
   },
-
+  { 
+    path: 'home', 
+    component: HomeComponent
+  },
 ];
 
 @NgModule({

@@ -44,7 +44,7 @@ export class NewPasswordComponent implements OnInit {
 
   restore() {
     if(this.newPasswordForm.valid){
-      console.log('Submissão dos dados:', JSON.stringify(this.newPasswordForm.value));
+      //actions
     }
   }
 }
