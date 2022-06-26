@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from '../models/login';
 import { LoginResult } from '../models/login-result';
-import { map } from 'rxjs/operators';
+import { map, windowTime } from 'rxjs/operators';
 import jwt_decode from 'jwt-decode';
 
 @Injectable({
@@ -27,6 +27,17 @@ export class LoginService {
         }
       }),
     );
+  }
+
+  logout(): boolean {
+    window.localStorage.removeItem('token');
+    window.localStorage.clear();
+    let token = window.localStorage.getItem('token');
+    if(!token){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getAuthorizationToken() {
