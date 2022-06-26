@@ -48,7 +48,7 @@ ng serve
 #### Backend
 
 **Crie um novo banco no SQL Server 2019**
-- Na caixa: Pesquisador de Objetos > Clique com o lado direitodo mouse em: Banco de Dados > Novo banco de dados > digite o nome do banco > Ok
+- Caixa: Pesquisador de Objetos > Clique com o lado direito do mouse em: Banco de Dados > Novo banco de dados > digite o nome do banco > Ok
 
 **No Microsoft Visual Studio**
 - Abra a pasta do backend
