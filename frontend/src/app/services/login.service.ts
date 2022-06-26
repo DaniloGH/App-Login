@@ -20,7 +20,6 @@ export class LoginService {
     const url = `${this.baseUrl}/login`;
     return this.http.post<LoginResult>(url, obj).pipe(
       map((response: any) => {
-        console.log('Meu token:', response.accessToken);
         if(response && response.accessToken){
           window.localStorage.setItem('token', response.accessToken);
           return response;
