@@ -1,5 +1,5 @@
 export interface LoginResult {
-    acessToken: string;
+    accessToken: string;
     expiresIn: number;
     userToken: {
         id: string;
